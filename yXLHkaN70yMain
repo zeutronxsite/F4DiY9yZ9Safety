@@ -1,0 +1,32 @@
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+local UserId = LocalPlayer.UserId
+
+-- Daftar ID Admin (Tambahkan ID baru di sini dengan format yang sama)
+local adminList = {
+    10897128392,
+    11355351989 -- Akun Anda
+}
+
+-- Fungsi untuk mengecek apakah ID pemain ada di dalam daftar admin
+local function isAdmin(id)
+    for _, adminId in ipairs(adminList) do
+        if id == adminId then
+            return true
+        end
+    end
+    return false
+end
+
+-- Eksekusi script berdasarkan status admin
+if isAdmin(UserId) then
+    warn("Your Role Is Admin!. Please Wait......")
+    wait(1)
+    -- Script Untuk Admin
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/zeutronxsite/KFvt5NQQ7Project/refs/heads/main/JUm3mBfPtMaintence"))()
+else
+    print("Your Role Is Members!. Please wait......")
+    wait(1)
+    -- Script Biasa
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/zeutronxsite/Protection/refs/heads/main/Security"))()
+end
