@@ -5,7 +5,8 @@ local UserId = LocalPlayer.UserId
 -- Daftar ID Admin (Tambahkan ID baru di sini dengan format yang sama)
 local adminList = {
     10897128392,
-    11355351989 -- Akun Anda
+    11355351989,
+    10632494357
 }
 
 -- Fungsi untuk mengecek apakah ID pemain ada di dalam daftar admin
