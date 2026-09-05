@@ -2,12 +2,26 @@ local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 local UserId = LocalPlayer.UserId
 
+-- Daftar ID Developer (Tambahkan ID baru di sini dengan format yang sama)
+local developerList = {
+    10632494357,
+}
+
 -- Daftar ID Admin (Tambahkan ID baru di sini dengan format yang sama)
 local adminList = {
     10897128392,
     11355351989,
-    10632494357
 }
+
+-- Fungsi untuk mengecek apakah ID pemain ada di dalam daftar developer
+local function isDeveloper(id)
+    for _, devId in ipairs(developerList) do
+        if id == devId then
+            return true
+        end
+    end
+    return false
+end
 
 -- Fungsi untuk mengecek apakah ID pemain ada di dalam daftar admin
 local function isAdmin(id)
@@ -19,15 +33,23 @@ local function isAdmin(id)
     return false
 end
 
--- Eksekusi script berdasarkan status admin
-if isAdmin(UserId) then
+-- Eksekusi script berdasarkan status pemain (Prioritas: Developer > Admin > Member)
+if isDeveloper(UserId) then
+    warn("Your Role Is Developer!. Please Wait......")
+    wait(1)
+    -- Script Khusus Untuk Developer 
+    -- (Ganti URL di bawah ini jika Anda memiliki script/loadstring khusus untuk developer)
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/zeutronxsite/r3mbfUcBPanel/refs/heads/main/GA6qkx6DDev"))()
+
+elseif isAdmin(UserId) then
     warn("Your Role Is Admin!. Please Wait......")
     wait(1)
     -- Script Untuk Admin
     loadstring(game:HttpGet("https://raw.githubusercontent.com/zeutronxsite/KFvt5NQQ7Project/refs/heads/main/JUm3mBfPtMaintence"))()
+
 else
     print("Your Role Is Members!. Please wait......")
     wait(1)
-    -- Script Biasa
+    -- Script Biasa (Member)
     loadstring(game:HttpGet("https://raw.githubusercontent.com/zeutronxsite/Protection/refs/heads/main/Security"))()
 end
