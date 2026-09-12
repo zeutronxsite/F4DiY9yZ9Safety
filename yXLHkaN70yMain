@@ -6,6 +6,7 @@ local UserId = LocalPlayer.UserId
 local developerList = {
     10632494357,
     11639113072,
+    11656080340,
 }
 
 -- Daftar ID Admin (Tambahkan ID baru di sini dengan format yang sama)
